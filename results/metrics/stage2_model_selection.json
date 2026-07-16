@@ -1,0 +1,14 @@
+{
+  "selected": "lgbm",
+  "lgbm_val": {
+    "roc_auc": 0.9297907408496678,
+    "pr_auc": 0.6564604681232913,
+    "tpr_at_5fpr": 0.7491559756920999
+  },
+  "lr_val": {
+    "roc_auc": 0.8370032302798114,
+    "pr_auc": 0.3252316205035171,
+    "tpr_at_5fpr": 0.45948683322079675
+  },
+  "criterion": "month-4 validation PR-AUC"
+}

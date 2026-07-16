@@ -1,0 +1,6 @@
+{
+  "f1_opt": 0.3492063581943512,
+  "youden": 0.03878976032137871,
+  "note": "f1/youden selected on calibrated month-4 scores",
+  "cost_threshold_central": 0.13043478260869565
+}
