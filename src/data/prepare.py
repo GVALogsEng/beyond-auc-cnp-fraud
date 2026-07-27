@@ -43,12 +43,8 @@ def sha256(path: Path, chunk: int = 1 << 20) -> str:
 
 
 def locate_archive() -> Path | None:
-    candidates = [config.DATA_RAW / config.ZIP_NAME,
-                  Path("/mnt/user-data/uploads/claude-fraud-kit") / config.ZIP_NAME]
-    for c in candidates:
-        if c.exists():
-            return c
-    return None
+    archive = config.DATA_RAW / config.ZIP_NAME
+    return archive if archive.exists() else None
 
 
 def unpack(archive: Path) -> None:
