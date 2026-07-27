@@ -1,5 +1,8 @@
-# data is never committed
-data/
+# data is never committed. Leading slash is load-bearing: unanchored `data/` matches a
+# directory named data at ANY depth, which silently swallowed the src/data/ package.
+# Note `git check-ignore -v src/data` (no trailing slash) prints nothing even when the
+# path IS ignored -- git can't tell a nonexistent path is a directory. Check `src/data/`.
+/data/
 
 # derived app artifacts (contain competition data samples - do not redistribute)
 app/artifacts/
