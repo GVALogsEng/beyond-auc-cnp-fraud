@@ -181,7 +181,12 @@ def main() -> None:
             "or place the archive at data/raw/ieee-fraud-detection.zip")
 
     log.info("archive: %s (%.1f MB)", archive, archive.stat().st_size / 1e6)
-    checksums = {"archive": {"path": str(archive), "sha256": sha256(archive),
+    # locate_archive() only ever returns config.DATA_RAW / config.ZIP_NAME, which is
+    # under config.ROOT by construction, so relative_to() cannot raise here. If a
+    # candidate outside ROOT is ever re-added, this line has to change with it.
+    # as_posix() rather than str() so the recorded path is identical on any platform.
+    checksums = {"archive": {"path": archive.relative_to(config.ROOT).as_posix(),
+                             "sha256": sha256(archive),
                              "bytes": archive.stat().st_size}}
     unpack(archive)
     for member in config.EXPECTED_FILES:

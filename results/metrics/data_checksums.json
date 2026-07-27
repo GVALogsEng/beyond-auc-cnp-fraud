@@ -1,6 +1,6 @@
 {
   "archive": {
-    "path": "/home/claude/beyond-auc-cnp-fraud/data/raw/ieee-fraud-detection.zip",
+    "path": "data/raw/ieee-fraud-detection.zip",
     "sha256": "4cc646da09d0a9b265983ffed775b1f9ee15af5266586df610e04d6adae0b829",
     "bytes": 123856947
   },
